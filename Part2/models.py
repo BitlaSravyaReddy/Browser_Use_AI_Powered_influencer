@@ -1,6 +1,6 @@
 from pydantic import BaseModel
 from typing import List
-
+#pydantic models for structured output from LLM
 class Post(BaseModel):
     post_title: str
     post_url: str
