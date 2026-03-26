@@ -35,7 +35,7 @@ async def main():
 )
     browser_session = BrowserSession(browser_profile=browser_profile)
 
-    
+    ## AGENT DOES THE FOLLOWING ACTION
     agent = Agent(
         task="Go to amazon.com and search for 'asus rog'. " \
         "From the results, select the first laptop and open it, " \
