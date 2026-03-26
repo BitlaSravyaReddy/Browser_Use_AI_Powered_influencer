@@ -1,94 +1,123 @@
-🧠 Browser_Use — Automated AI Product Reviewer
 
-An agentic AI system that autonomously browses, analyzes, and reviews trending products on Product Hunt
- — combining LLM intelligence, Playwright automation, and Text-to-Speech narration to deliver an immersive review experience.
+# Browser_Use – Automated AI Product Reviewer
 
-🚀 Overview
+This project is a small AI agent that automatically browses **Product Hunt**, collects information about the top products of the day, and generates short reviews using a language model.
+The reviews can also be converted into speech using a text-to-speech system.
 
-Browser_Use is a cutting-edge AI agent that:
+The goal of the project was to experiment with **AI agents that combine browser automation, LLM reasoning, and voice output** in a single workflow.
 
-Uses Playwright for automated browser interaction.
+---
 
-Fetches and evaluates the top 2 products on Product Hunt each day.
+## What it does
 
-Leverages LLM API integration to generate insightful, structured reviews.
+The script runs an automated flow:
 
-Employs TTS (Text-to-Speech) to narrate reviews for a more dynamic presentation.
+1. Opens Product Hunt using **Playwright**
+2. Finds the top products of the day
+3. Extracts basic information (name, description, link)
+4. Sends that information to an **LLM API**
+5. Generates a short review
+6. Converts the review into **speech using TTS**
 
-This project demonstrates agentic reasoning, autonomous browsing, and AI-driven content generation — pushing the limits of what’s possible with modern AI frameworks.
+At the end, the program produces:
 
-⚙️ Features
+* A **text review**
+* An **audio narration** of the review
 
-✅ Autonomous Web Browsing — Navigates Product Hunt without manual input.
-✅ AI-Powered Review Generation — Uses a Large Language Model (LLM) API to summarize and critique products.
-✅ Playwright Integration — Handles site interaction and data extraction reliably.
-✅ Text-to-Speech Narration — Converts generated reviews into natural-sounding speech.
-✅ Fully Automated Flow — From fetching to narrating, the process runs end-to-end.
+---
 
-🧩 Tech Stack
-Component	Technology Used
-Automation	Playwright
+## Tech Stack
 
-LLM Integration	OpenAI / compatible AI API
-Voice Generation (TTS)	gTTS / other supported TTS module
-Framework	Python 3.x
-Runtime	Browser-Use framework (agent orchestration)
-🧠 How It Works
+* **Python 3**
+* **Playwright** – browser automation
+* **LLM API** – for generating product reviews
+* **TTS (Text-to-Speech)** – converts the review to audio
+* **Browser-Use framework** – for agent workflow
 
-Launch Agent: The AI agent boots using Browser_Use framework.
+---
 
-Navigate Product Hunt: Playwright opens the Product Hunt “Today” page.
+## Project Workflow
 
-Scrape Data: The top 2 products are extracted with titles, descriptions, and links.
+```
+Product Hunt Page
+       ↓
+Playwright Scraping
+       ↓
+Extract product details
+       ↓
+Send data to LLM
+       ↓
+Generate review
+       ↓
+Convert review to speech
+       ↓
+Save / display output
+```
 
-Generate Reviews: The LLM analyzes product information and generates structured, human-like reviews.
+---
 
-Voice Narration: The review is spoken aloud using the TTS system.
+## Setup
 
-Output: Both text and audio outputs are saved or displayed.
+### 1. Clone the repo
 
-🛠️ Setup & Installation
-Prerequisites
-
-Python 3.10 or later
-
-Node.js (for Playwright)
-
-API key for your chosen LLM provider (e.g., OpenAI)
-
-Steps
-# Clone this repository
+```bash
 git clone https://github.com/itsDurvank/Browser_Use.git
 cd Browser_Use
+```
 
-# Install dependencies
+### 2. Install dependencies
+
+```bash
 pip install -r requirements.txt
+```
 
-# Set up environment variables
+### 3. Configure environment variables
+
+Copy the example file:
+
+```bash
 cp .env.example .env
-# Add your API keys and configuration in .env
+```
 
-# Run Playwright setup
+Add your API key inside `.env`.
+
+### 4. Install Playwright browsers
+
+```bash
 playwright install
+```
 
-# Launch the AI Reviewer
+### 5. Run the script
+
+```bash
 python main.py
+```
 
-🎧 Example Output
+---
 
-Text Review:
-“Product X is a minimalist productivity app that streamlines task management using intuitive gesture controls…”
+## Example Output
 
-Audio Output:
-The same review narrated in a realistic voice using TTS.
+Example generated review:
 
-🧭 Vision
+```
+Product X is a productivity tool designed to simplify task management.
+The interface is clean and focuses on reducing friction when organizing daily work...
+```
 
-Browser_Use isn’t just an automation project — it’s a demonstration of next-gen agentic AI capable of autonomous reasoning, decision-making, and multimedia generation.
-This project aims to showcase how AI + Automation + Voice can redefine digital content creation and evaluation.
+The same review is also generated as an **audio narration** using text-to-speech.
 
-🧑‍💻 Author
+---
 
-Durvank Kavhale
-AI/ML Developer | Agentic AI Enthusiast
-GitHub
+## Why I built this
+
+I wanted to explore how **AI agents can combine multiple capabilities**:
+
+* browser automation
+* LLM reasoning
+* speech generation
+
+into one workflow.
+
+This project is mainly an experiment in **agentic automation using real web data**.
+
+---
